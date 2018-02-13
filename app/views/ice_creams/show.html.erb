@@ -13,10 +13,12 @@
 </p>
 
 <ul>
-  <% @ice_cream.toppings.each do |topping| %>
+  <% if @ice_cream.toppings.each do |topping| %>
     <li>
       <%= topping.name %>
     </li>
+  <% end.empty? %>
+    <li>You have no toppings</li>
   <% end %>
 </ul>
 

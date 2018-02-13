@@ -1,3 +1,19 @@
+<% if @ice_cream.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@ice_cream.errors.count, "Error") %>
+      prevented this ice cream from being saved
+    </h2>
+    <ul>
+      <% @ice_cream.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @ice_cream do |f| %>
   <%= f.label :receipient %>
   <%= f.text_field :receipient %><br>
