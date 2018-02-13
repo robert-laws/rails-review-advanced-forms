@@ -23,6 +23,6 @@ class IceCreamsController < ApplicationController
   private
 
   def ice_cream_params
-    params.require(:ice_cream).permit(:flavor, :receipient, topping_ids: [])
+    params.require(:ice_cream).permit(:flavor, :receipient, topping_ids: [], toppings_attributes: [:name])
   end
 end

@@ -5,4 +5,11 @@ class IceCream < ApplicationRecord
 
   validates :receipient, presence: true
   validates :flavor, presence: true
+
+  def toppings_attributes=(topping_attributes)
+    topping_attributes.values.each do |topping_attribute|
+      topping = Topping.find_or_create_by(topping_attribute)
+      self.toppings << topping
+    end
+  end
 end

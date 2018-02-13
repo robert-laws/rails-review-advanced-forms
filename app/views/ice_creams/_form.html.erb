@@ -21,7 +21,13 @@
   <%= f.label :flavor %>
   <%= f.text_field :flavor %><br>
 
-  <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %><br>
+  <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %><br><br>
+
+  <div>New Topping:</div>
+  <%= f.fields_for :toppings, @ice_cream.toppings.build do |topping_fields| %>
+    <%= topping_fields.label :name %>
+    <%= topping_fields.text_field :name %><br>
+  <% end %>
 
   <%= f.submit %>
 <% end %>
