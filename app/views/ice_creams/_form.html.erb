@@ -1,0 +1,11 @@
+<%= form_for @ice_cream do |f| %>
+  <%= f.label :receipient %>
+  <%= f.text_field :receipient %><br>
+
+  <%= f.label :flavor %>
+  <%= f.text_field :flavor %><br>
+
+  <%= f.collection_check_boxes :topping_ids, Topping.all, :id, :name %><br>
+
+  <%= f.submit %>
+<% end %>

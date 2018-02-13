@@ -1,0 +1,9 @@
+<h1>All Ice Creams</h1>
+
+<ul>
+  <% @ice_creams.each do |ice_cream| %>
+    <li>
+      <%= link_to ice_cream.receipient, ice_cream_path(ice_cream) %>
+    </li>
+  <% end %>
+</ul>

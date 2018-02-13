@@ -1,0 +1,25 @@
+<h1>Individual Ice Cream</h1>
+
+<h4>
+  Receipient: <%= @ice_cream.receipient %>
+</h4>
+
+<p>
+  Flavor: <%= @ice_cream.flavor %>
+</p>
+
+<p>
+  All Toppings:
+</p>
+
+<ul>
+  <% @ice_cream.toppings.each do |topping| %>
+    <li>
+      <%= topping.name %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to 'View all Ice Cream Receipients', ice_creams_path %>
