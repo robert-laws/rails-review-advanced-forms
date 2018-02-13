@@ -20,6 +20,19 @@ class IceCreamsController < ApplicationController
     end
   end
 
+  def edit
+    @ice_cream = IceCream.find(params[:id])
+  end
+
+  def update
+    @ice_cream = IceCream.find(params[:id])
+    if @ice_cream.update(ice_cream_params)
+      redirect_to ice_cream_path(@ice_cream)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def ice_cream_params
